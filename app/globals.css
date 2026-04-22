@@ -1,0 +1,189 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Scoop HRM Color Palette */
+  --background: #F5F2EC;
+  --foreground: #1A1714;
+  --card: #FFFFFF;
+  --card-foreground: #1A1714;
+  --popover: #FFFFFF;
+  --popover-foreground: #1A1714;
+  --primary: #D4521A;
+  --primary-foreground: #FFFFFF;
+  --secondary: #2A6049;
+  --secondary-foreground: #FFFFFF;
+  --muted: #F5F2EC;
+  --muted-foreground: #6B6560;
+  --accent: #2A6049;
+  --accent-foreground: #FFFFFF;
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: #E5E2DC;
+  --input: #E5E2DC;
+  --ring: #D4521A;
+  --chart-1: #D4521A;
+  --chart-2: #2A6049;
+  --chart-3: #6B6560;
+  --chart-4: #1A1714;
+  --chart-5: #F5F2EC;
+  --radius: 0.625rem;
+  
+  /* Custom Scoop colors */
+  --burnt-orange: #D4521A;
+  --forest-green: #2A6049;
+  --off-white: #F5F2EC;
+  --ink: #1A1714;
+  --charcoal: #1A1714;
+  --warm-gray: #6B6560;
+}
+
+.dark {
+  --background: #1A1714;
+  --foreground: #F5F2EC;
+  --card: #2A2520;
+  --card-foreground: #F5F2EC;
+  --popover: #2A2520;
+  --popover-foreground: #F5F2EC;
+  --primary: #D4521A;
+  --primary-foreground: #FFFFFF;
+  --secondary: #2A6049;
+  --secondary-foreground: #FFFFFF;
+  --muted: #2A2520;
+  --muted-foreground: #9A9590;
+  --accent: #2A6049;
+  --accent-foreground: #FFFFFF;
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: #3A3530;
+  --input: #3A3530;
+  --ring: #D4521A;
+  --chart-1: #D4521A;
+  --chart-2: #2A6049;
+  --chart-3: #9A9590;
+  --chart-4: #F5F2EC;
+  --chart-5: #2A2520;
+}
+
+@theme inline {
+  --font-sans: 'DM Sans', 'DM Sans Fallback', system-ui, sans-serif;
+  --font-serif: 'Syne', 'Syne Fallback', serif;
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  
+  /* Custom Scoop HRM colors */
+  --color-burnt-orange: var(--burnt-orange);
+  --color-forest-green: var(--forest-green);
+  --color-off-white: var(--off-white);
+  --color-ink: var(--ink);
+  --color-charcoal: var(--charcoal);
+  --color-warm-gray: var(--warm-gray);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Scoop HRM Custom Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes float-delayed {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes underline-grow {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-delayed 5s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.animate-fade-up {
+  animation: fade-up 0.6s ease-out forwards;
+}
+
+.animate-underline {
+  animation: underline-grow 0.8s ease-out forwards;
+  animation-delay: 0.5s;
+}
