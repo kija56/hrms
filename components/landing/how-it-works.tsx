@@ -55,7 +55,7 @@ export function HowItWorks() {
   const [activeTab, setActiveTab] = useState<"employees" | "business">("employees")
 
   return (
-    <section className="bg-foreground py-20 lg:py-28">
+    <section id="how-it-works" className="bg-foreground py-20 lg:py-28 scroll-mt-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center">

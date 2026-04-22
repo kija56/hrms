@@ -41,13 +41,20 @@ export function Hero() {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               
-              {/* Watch Video - Jobaway style */}
-              <button className="group flex flex-col items-center gap-2">
-                <div className="flex h-14 w-14 items-center justify-center rounded-full border-2 border-foreground/20 bg-background transition-all group-hover:border-primary group-hover:bg-primary">
-                  <Play className="h-5 w-5 fill-foreground text-foreground transition-colors group-hover:fill-primary-foreground group-hover:text-primary-foreground" />
-                </div>
-                <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground">Watch Video</span>
-              </button>
+              {/* Watch video CTA */}
+              <a
+                href="#how-it-works"
+                aria-label="Watch product walkthrough video"
+                className="group inline-flex items-center gap-3 rounded-full pr-2 transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+              >
+                <span className="relative flex h-14 w-14 items-center justify-center rounded-full border-2 border-foreground/20 bg-background transition-all group-hover:border-primary group-hover:bg-primary/95">
+                  <span className="absolute inset-0 rounded-full ring-8 ring-primary/10 opacity-0 transition-opacity group-hover:opacity-100" />
+                  <Play className="relative h-5 w-5 fill-foreground text-foreground transition-colors group-hover:fill-primary-foreground group-hover:text-primary-foreground" />
+                </span>
+                <span className="text-base font-semibold text-foreground">
+                  Watch Video
+                </span>
+              </a>
             </div>
           </div>
 
