@@ -6,7 +6,7 @@ import { PageHeader } from "@/components/landing/page-header"
 import { solutionItems } from "@/lib/zoho-navigation-data"
 
 export const metadata = {
-  title: "Solutions — ScoopPay HRM",
+  title: "Solutions — Payscoop HRM",
   description: "Discover HR solutions tailored for small, mid-size, and enterprise organizations.",
 }
 
@@ -35,7 +35,7 @@ export default function SolutionsPage() {
                 Solution Blueprint
               </span>
               <h2 className="mt-4 font-serif text-3xl font-bold text-white sm:text-4xl">
-                Pick the right ScoopPay HRM operating model for your growth stage
+                Pick the right Payscoop HRM operating model for your growth stage
               </h2>
               <p className="mt-4 text-lg text-white/70">
                 Each solution path is designed for a different level of complexity, governance, and

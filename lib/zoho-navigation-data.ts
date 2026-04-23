@@ -130,6 +130,24 @@ export const featureItems: NavPageItem[] = [
 
 export const resourceItems: NavPageItem[] = [
   {
+    slug: "free-tools",
+    title: "Free Tools",
+    summary: "Practical HR and payroll calculators to speed up daily decisions.",
+    highlights: ["HR calculators", "Salary utilities", "Maturity assessments"],
+  },
+  {
+    slug: "hr-toolkit",
+    title: "HR Toolkit",
+    summary: "Download-ready HR templates, checklists, and policy resources.",
+    highlights: ["Document templates", "Policy packs", "Interview kits"],
+  },
+  {
+    slug: "compliance",
+    title: "Compliance",
+    summary: "Labor-law, payroll, and statutory compliance resources in one place.",
+    highlights: ["Statutory forms", "Wage guidance", "Leave and hours rules"],
+  },
+  {
     slug: "administrator-guide",
     title: "Administrator Guide",
     summary: "Step-by-step setup guidance for admins configuring the HR platform.",

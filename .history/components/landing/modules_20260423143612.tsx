@@ -19,6 +19,7 @@ const modules = [
     icon: Briefcase,
     title: "Recruitment",
     description: "Build candidate pipelines, track interviews, and hire faster with structured workflows.",
+    metric: "340+ hires",
     href: "/modules/recruitment",
   },
   {
@@ -26,6 +27,7 @@ const modules = [
     icon: Wallet,
     title: "Payroll",
     description: "Automate salary processing, deductions, and payslip generation with audit-ready records.",
+    metric: "1,247 processed",
     href: "/modules/payroll",
   },
   {
@@ -33,6 +35,7 @@ const modules = [
     icon: Calendar,
     title: "Attendance",
     description: "Capture attendance across office and remote teams with policy-based controls.",
+    metric: "98.5% attendance rate",
     href: "/modules/attendance",
   },
   {
@@ -40,6 +43,7 @@ const modules = [
     icon: Plane,
     title: "Leave Management",
     description: "Run leave requests, approvals, and team availability with real-time visibility.",
+    metric: "12 leave policy types",
     href: "/modules/leave",
   },
   {
@@ -47,6 +51,7 @@ const modules = [
     icon: Target,
     title: "Performance Tracking",
     description: "Align goals, conduct appraisals, and monitor development outcomes across teams.",
+    metric: "4,509 reviews",
     href: "/modules/performance",
   },
   {
@@ -54,6 +59,7 @@ const modules = [
     icon: UserPlus,
     title: "Onboarding",
     description: "Deliver smooth first-day experiences with automated onboarding checklists and tasks.",
+    metric: "91% completion in first week",
     href: "/modules/onboarding",
   },
   {
@@ -61,17 +67,18 @@ const modules = [
     icon: GraduationCap,
     title: "Learning",
     description: "Assign training paths and track completion to improve role readiness and growth.",
+    metric: "1,039 courses",
     href: "/features/learning-management-system",
   },
 ]
 
 export function Modules() {
   return (
-    <section id="modules" className="bg-muted/30 py-20 lg:py-28">
+    <section id="modules" className="bg-background py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center">
-          <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-secondary/20 bg-secondary/5 px-4 py-2 text-sm font-medium text-secondary">
+          <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-muted px-4 py-2 text-sm font-medium text-foreground">
             <BarChart3 className="h-4 w-4" />
             Modules
           </span>
@@ -89,11 +96,11 @@ export function Modules() {
             <Link
               key={module.id}
               href={module.href}
-              className={`group grid gap-4 px-6 py-6 transition-colors hover:bg-muted/40 lg:grid-cols-[56px_1fr_auto] lg:items-center lg:px-8 ${
+              className={`group grid gap-4 px-6 py-6 transition-colors hover:bg-muted lg:grid-cols-[56px_1fr_auto] lg:items-center lg:px-8 ${
                 index < modules.length - 1 ? "border-b border-border" : ""
               }`}
             >
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-foreground text-background transition-colors group-hover:bg-primary">
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-border bg-muted text-foreground transition-colors group-hover:bg-muted">
                 <module.icon className="h-7 w-7" />
               </div>
 
@@ -103,6 +110,9 @@ export function Modules() {
               </div>
 
               <div className="flex items-center gap-4 lg:justify-end">
+                <span className="rounded-full border border-border bg-muted px-3 py-1 text-xs font-semibold uppercase tracking-wide text-foreground">
+                  {module.metric}
+                </span>
                 <span className="inline-flex items-center gap-2 font-medium text-foreground transition-colors group-hover:text-primary">
                   Learn more
                   <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -115,23 +125,20 @@ export function Modules() {
         {/* Two-column CTA */}
         <div className="mt-16 grid gap-6 lg:grid-cols-2">
           {/* For Employees */}
-          <div className="group relative overflow-hidden rounded-3xl bg-secondary p-8 lg:p-10">
-            <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-background/10" />
-            <div className="absolute -bottom-10 -left-10 h-40 w-40 rounded-full bg-background/5" />
-            
+          <div className="group relative overflow-hidden rounded-3xl border border-border bg-card p-8 lg:p-10">
             <div className="relative">
-              <span className="mb-4 inline-block rounded-full bg-background/20 px-3 py-1 text-sm font-medium text-secondary-foreground">
+              <span className="mb-4 inline-block rounded-full border border-border bg-muted px-3 py-1 text-sm font-medium text-foreground">
                 Category
               </span>
-              <h3 className="mb-4 font-serif text-2xl font-bold text-secondary-foreground lg:text-3xl">
+              <h3 className="mb-4 font-serif text-2xl font-bold text-foreground lg:text-3xl">
                 For Employees
               </h3>
-              <p className="mb-6 max-w-md text-secondary-foreground/80">
+              <p className="mb-6 max-w-md text-muted-foreground">
                 Access your payslips, request leave, track goals, and manage your profile from anywhere with our intuitive self-service portal.
               </p>
               <Link
                 href="/modules"
-                className="inline-flex items-center gap-2 rounded-full bg-background px-6 py-3 font-medium text-secondary transition-all hover:gap-3"
+                className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-6 py-3 font-medium text-foreground transition-all hover:gap-3"
               >
                 Get Started
                 <ArrowUpRight className="h-4 w-4" />
@@ -140,18 +147,15 @@ export function Modules() {
           </div>
 
           {/* For Businesses */}
-          <div className="group relative overflow-hidden rounded-3xl bg-foreground p-8 lg:p-10">
-            <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-primary/20" />
-            <div className="absolute -bottom-10 -left-10 h-40 w-40 rounded-full bg-primary/10" />
-            
+          <div className="group relative overflow-hidden rounded-3xl border border-border bg-card p-8 lg:p-10">
             <div className="relative">
-              <span className="mb-4 inline-block rounded-full bg-primary/20 px-3 py-1 text-sm font-medium text-background">
+              <span className="mb-4 inline-block rounded-full border border-border bg-muted px-3 py-1 text-sm font-medium text-foreground">
                 Category
               </span>
-              <h3 className="mb-4 font-serif text-2xl font-bold text-background lg:text-3xl">
+              <h3 className="mb-4 font-serif text-2xl font-bold text-foreground lg:text-3xl">
                 For Business Owners
               </h3>
-              <p className="mb-6 max-w-md text-background/70">
+              <p className="mb-6 max-w-md text-muted-foreground">
                 Streamline your HR operations with powerful tools for payroll, attendance, recruitment, and analytics all in one place.
               </p>
               <Link

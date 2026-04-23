@@ -14,6 +14,115 @@ export interface ResourceDetail {
 
 export const resourceDetails: ResourceDetail[] = [
   {
+    slug: "free-tools",
+    hero: "Solve everyday HR, payroll, and compensation calculations in minutes, defaulted for Tanzania.",
+    overview: [
+      "Free Tools centralize high-frequency calculators and quick evaluators so HR teams can move from guesswork to consistent decision-making.",
+      "The collection is designed for fast, self-service usage by HR, finance partners, and managers without requiring platform setup.",
+    ],
+    includes: [
+      "Compensation calculators such as salary hike and hourly-to-salary conversion",
+      "Payroll tools including HRA and gratuity estimation workflows",
+      "ROI and profitability calculators for HR technology planning",
+      "HR maturity and pulse-style assessment tools",
+      "Quick document helpers such as salary slip generation",
+    ],
+    bestFor: [
+      "HR teams that need quick, repeatable calculations",
+      "Managers evaluating compensation and cost scenarios",
+      "Finance and people ops stakeholders planning budgets",
+    ],
+    howToUse: [
+      "Pick the tool based on the exact HR decision you need to make",
+      "Standardize assumptions before sharing outputs with stakeholders",
+      "Save generated outputs as artifacts for approvals and audits",
+      "Review and refresh assumptions quarterly as policies evolve",
+    ],
+    links: [
+      {
+        label: "Open Free Tools Workspace",
+        href: "/resources/free-tools",
+        type: "docs",
+      },
+    ],
+  },
+  {
+    slug: "hr-toolkit",
+    hero: "Access a structured library of HR templates, frameworks, and policy-ready documents.",
+    overview: [
+      "HR Toolkit provides a categorized template hub that helps teams avoid reinventing core HR documents.",
+      "It supports faster policy rollouts, cleaner communication, and better process consistency across the employee lifecycle.",
+    ],
+    includes: [
+      "Checklists for onboarding, exits, and operational HR routines",
+      "Email playbooks for common HR communication scenarios",
+      "Job description templates across functions and seniority levels",
+      "Policy templates for conduct, attendance, and workplace operations",
+      "Interview question banks, OKR examples, and HR frameworks",
+    ],
+    bestFor: [
+      "People ops teams building repeatable HR processes",
+      "Growing organizations standardizing HR documentation",
+      "HR leaders launching policy or communication initiatives",
+    ],
+    howToUse: [
+      "Start with templates aligned to immediate process gaps",
+      "Customize language to your company and jurisdiction",
+      "Publish approved versions in a central internal repository",
+      "Set a periodic review cadence for legal and policy updates",
+    ],
+    links: [
+      {
+        label: "Browse Toolkit Pages",
+        href: "/resources/hr-toolkit",
+        type: "docs",
+      },
+      {
+        label: "Open HR Checklists Toolkit",
+        href: "/resources/hr-toolkit/checklists",
+        type: "docs",
+      },
+    ],
+  },
+  {
+    slug: "compliance",
+    hero: "Operationalize statutory HR and payroll compliance with practical guidance, defaulted for Tanzania.",
+    overview: [
+      "Compliance resources bring together essential statutory forms, wage references, leave expectations, and working-hour considerations in one destination.",
+      "This helps HR and payroll teams reduce compliance risk while scaling operations across multiple locations.",
+    ],
+    includes: [
+      "Statutory and labor-law forms for payroll and workplace compliance",
+      "Minimum wage references by state and territory",
+      "Leave and working-hour guidance with overtime considerations",
+      "Public holiday and calendar references for workforce planning",
+      "Compliance-focused explainers for HR and payroll execution",
+    ],
+    bestFor: [
+      "HR and payroll teams managing multi-state operations",
+      "Compliance owners reviewing statutory readiness",
+      "Operations leaders reducing risk in people processes",
+    ],
+    howToUse: [
+      "Identify applicable states and regulatory categories first",
+      "Use the relevant forms and references to validate current processes",
+      "Document compliance checkpoints in payroll and HR SOPs",
+      "Repeat audits regularly and update workflows as rules change",
+    ],
+    links: [
+      {
+        label: "Open Compliance Workspace",
+        href: "/resources/compliance",
+        type: "docs",
+      },
+      {
+        label: "Open Compliance Forms",
+        href: "/resources/compliance",
+        type: "docs",
+      },
+    ],
+  },
+  {
     slug: "administrator-guide",
     hero: "A complete playbook for configuring and governing your HR platform as an admin.",
     overview: [

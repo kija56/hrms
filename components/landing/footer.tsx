@@ -17,11 +17,11 @@ const footerLinks = {
     { label: "Contact", href: "/resources/submit-tickets" },
   ],
   resources: [
-    { label: "Documentation", href: "/resources/administrator-guide" },
+    { label: "Free Tools", href: "/resources/free-tools" },
+    { label: "HR Toolkit", href: "/resources/hr-toolkit" },
+    { label: "Compliance", href: "/resources/compliance" },
     { label: "Help Center", href: "/resources/troubleshooting-guide" },
     { label: "Webinars", href: "/resources/webinars" },
-    { label: "Case Studies", href: "/resources/demo" },
-    { label: "Templates", href: "/resources/welcome-guide" },
   ],
   legal: [
     { label: "Privacy Policy", href: "/legal/privacy-policy" },
@@ -49,7 +49,7 @@ export function Footer() {
               <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary">
                 <span className="font-serif text-xl font-bold text-primary-foreground">S</span>
               </div>
-              <span className="font-serif text-2xl font-bold text-background">ScoopPay</span>
+              <span className="font-serif text-2xl font-bold text-background">Payscoop</span>
             </Link>
             <p className="mt-4 max-w-xs text-background/60">
               Modern HR management that feels human, scales like software. Built for teams across Africa and beyond.
@@ -142,7 +142,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-background/10 pt-8 sm:flex-row">
           <p className="text-sm text-background/60">
-            © {new Date().getFullYear()} ScoopPay HRM. All rights reserved.
+            © {new Date().getFullYear()} Payscoop HRM. All rights reserved.
           </p>
           <p className="text-sm text-background/60">
             Made with ❤️ for HR teams everywhere

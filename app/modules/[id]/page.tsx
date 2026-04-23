@@ -20,12 +20,12 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   
   if (!module) {
     return {
-      title: "Module Not Found — ScoopPay HRM",
+      title: "Module Not Found — Payscoop HRM",
     }
   }
 
   return {
-    title: `${module.title} — ScoopPay HRM`,
+    title: `${module.title} — Payscoop HRM`,
     description: module.shortDescription,
   }
 }
@@ -261,7 +261,7 @@ export default async function ModuleDetailPage({ params }: { params: Promise<{ i
             Ready to Transform Your {module.title}?
           </h2>
           <p className="mb-8 text-lg text-muted-foreground">
-            Get started with ScoopPay HRM today and experience the difference our platform can make.
+            Get started with Payscoop HRM today and experience the difference our platform can make.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Button 

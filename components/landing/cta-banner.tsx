@@ -19,7 +19,7 @@ export function CtaBanner() {
           Ready to transform your HR operations?
         </h2>
         <p className="mx-auto mt-6 max-w-2xl text-lg text-primary-foreground/80">
-          Join thousands of companies already using ScoopPay HRM to streamline their workforce management. Start your free 14-day trial today.
+          Join thousands of companies already using Payscoop HRM to streamline their workforce management. Start your free 14-day trial today.
         </p>
 
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">

@@ -19,6 +19,7 @@ const modules = [
     icon: Briefcase,
     title: "Recruitment",
     description: "Build candidate pipelines, track interviews, and hire faster with structured workflows.",
+    metric: "340+ hires",
     href: "/modules/recruitment",
   },
   {
@@ -26,6 +27,7 @@ const modules = [
     icon: Wallet,
     title: "Payroll",
     description: "Automate salary processing, deductions, and payslip generation with audit-ready records.",
+    metric: "1,247 processed",
     href: "/modules/payroll",
   },
   {
@@ -33,6 +35,7 @@ const modules = [
     icon: Calendar,
     title: "Attendance",
     description: "Capture attendance across office and remote teams with policy-based controls.",
+    metric: "98.5% attendance rate",
     href: "/modules/attendance",
   },
   {
@@ -40,6 +43,7 @@ const modules = [
     icon: Plane,
     title: "Leave Management",
     description: "Run leave requests, approvals, and team availability with real-time visibility.",
+    metric: "12 leave policy types",
     href: "/modules/leave",
   },
   {
@@ -47,6 +51,7 @@ const modules = [
     icon: Target,
     title: "Performance Tracking",
     description: "Align goals, conduct appraisals, and monitor development outcomes across teams.",
+    metric: "4,509 reviews",
     href: "/modules/performance",
   },
   {
@@ -54,6 +59,7 @@ const modules = [
     icon: UserPlus,
     title: "Onboarding",
     description: "Deliver smooth first-day experiences with automated onboarding checklists and tasks.",
+    metric: "91% completion in first week",
     href: "/modules/onboarding",
   },
   {
@@ -61,6 +67,7 @@ const modules = [
     icon: GraduationCap,
     title: "Learning",
     description: "Assign training paths and track completion to improve role readiness and growth.",
+    metric: "1,039 courses",
     href: "/features/learning-management-system",
   },
 ]
@@ -103,6 +110,9 @@ export function Modules() {
               </div>
 
               <div className="flex items-center gap-4 lg:justify-end">
+                <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary">
+                  {module.metric}
+                </span>
                 <span className="inline-flex items-center gap-2 font-medium text-foreground transition-colors group-hover:text-primary">
                   Learn more
                   <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

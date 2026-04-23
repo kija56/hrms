@@ -19,7 +19,7 @@ export async function generateMetadata({
   const detail = getSolutionDetailBySlug(slug)
 
   return {
-    title: item ? `${item.title} — ScoopPay HRM` : "Solution Not Found — ScoopPay HRM",
+    title: item ? `${item.title} — Payscoop HRM` : "Solution Not Found — Payscoop HRM",
     description: detail?.hero ?? item?.summary,
   }
 }

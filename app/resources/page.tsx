@@ -6,8 +6,8 @@ import { PageHeader } from "@/components/landing/page-header"
 import { resourceItems } from "@/lib/zoho-navigation-data"
 
 export const metadata = {
-  title: "Resources — ScoopPay HRM",
-  description: "Explore documentation, training, and enablement resources inspired by Zoho People.",
+  title: "Resources — Payscoop HRM",
+  description: "Explore free tools, HR toolkits, compliance resources, and enablement content.",
 }
 
 export default function ResourcesPage() {

@@ -16,7 +16,7 @@ export async function generateMetadata({
   const doc = getLegalDocumentBySlug(slug)
 
   return {
-    title: doc ? `${doc.title} — ScoopPay HRM` : "Legal Page Not Found — ScoopPay HRM",
+    title: doc ? `${doc.title} — Payscoop HRM` : "Legal Page Not Found — Payscoop HRM",
     description: doc?.summary,
   }
 }

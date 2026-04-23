@@ -6,7 +6,7 @@ import { PageHeader } from "@/components/landing/page-header"
 import { featureItems } from "@/lib/zoho-navigation-data"
 
 export const metadata = {
-  title: "Features — ScoopPay HRM",
+  title: "Features — Payscoop HRM",
   description: "Explore all HR platform capabilities inspired by Zoho People feature sections.",
 }
 
@@ -75,7 +75,7 @@ export default function FeaturesPage() {
                 HR features for every stage of the employee lifecycle
               </h2>
               <p className="mt-4 text-lg text-white/70">
-                Explore ScoopPay HRM capabilities grouped by outcomes, not just modules, so it is easier
+                Explore Payscoop HRM capabilities grouped by outcomes, not just modules, so it is easier
                 to find what matters to your team.
               </p>
             </div>

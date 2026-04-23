@@ -14,7 +14,7 @@ export const legalDocuments: LegalDocument[] = [
   {
     slug: "privacy-policy",
     title: "Privacy Policy",
-    summary: "How ScoopPay HRM collects, uses, and protects personal data.",
+    summary: "How Payscoop HRM collects, uses, and protects personal data.",
     sections: [
       {
         heading: "Information We Collect",
@@ -45,7 +45,7 @@ export const legalDocuments: LegalDocument[] = [
   {
     slug: "terms-of-service",
     title: "Terms of Service",
-    summary: "Rules and conditions governing use of ScoopPay HRM services.",
+    summary: "Rules and conditions governing use of Payscoop HRM services.",
     sections: [
       {
         heading: "Account Responsibilities",
@@ -58,7 +58,7 @@ export const legalDocuments: LegalDocument[] = [
       {
         heading: "Service Usage",
         points: [
-          "ScoopPay HRM provides cloud-based HR tools under active subscription plans.",
+          "Payscoop HRM provides cloud-based HR tools under active subscription plans.",
           "Feature availability may vary by plan, region, or compliance requirements.",
           "We may update services to improve security, performance, and user experience.",
         ],
@@ -107,7 +107,7 @@ export const legalDocuments: LegalDocument[] = [
   {
     slug: "gdpr",
     title: "GDPR",
-    summary: "How ScoopPay HRM supports GDPR-aligned data handling practices.",
+    summary: "How Payscoop HRM supports GDPR-aligned data handling practices.",
     sections: [
       {
         heading: "Lawful Processing",

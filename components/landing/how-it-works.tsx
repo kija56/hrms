@@ -46,7 +46,7 @@ const steps = {
       number: "3",
       icon: Rocket,
       title: "Scale With Confidence",
-      description: "As your team grows, ScoopPay grows with you. No limits on employees, unlimited modules, always ready.",
+      description: "As your team grows, Payscoop grows with you. No limits on employees, unlimited modules, always ready.",
     },
   ],
 }

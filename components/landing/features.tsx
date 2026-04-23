@@ -68,12 +68,12 @@ export function Features() {
               Why Us
             </span>
             <h2 className="font-serif text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl text-balance">
-              Why Choose ScoopPay HRM
+              Why Choose Payscoop HRM
             </h2>
           </div>
           <div className="max-w-md space-y-3 lg:text-right">
             <p className="text-muted-foreground">
-              From day-one onboarding to payroll and analytics, ScoopPay HRM helps teams run modern HR without operational chaos.
+              From day-one onboarding to payroll and analytics, Payscoop HRM helps teams run modern HR without operational chaos.
             </p>
             <div className="flex items-center justify-center gap-2 lg:justify-end">
               <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary">

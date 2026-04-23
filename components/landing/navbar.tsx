@@ -103,6 +103,10 @@ const dropdownSections: DropdownSection[] = [
         ],
       },
       {
+        label: "Toolkits and Compliance",
+        slugs: ["free-tools", "hr-toolkit", "compliance"],
+      },
+      {
         label: "Learning and Community",
         slugs: ["help-videos", "video-lounge", "webinars", "training", "blogs", "knowledge-hive"],
       },
@@ -131,6 +135,7 @@ const groupIconMap: Record<string, React.ComponentType<{ className?: string }>> 
   "Talent and Productivity": ClipboardList,
   "Operations and Platform": BarChart3,
   Documentation: ShieldCheck,
+  "Toolkits and Compliance": ShieldCheck,
   "Learning and Community": Video,
   "Product Updates and Support": Wrench,
   "Business Size": Briefcase,
@@ -175,7 +180,7 @@ export function Navbar() {
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary">
               <span className="font-serif text-xl font-bold text-primary-foreground">S</span>
             </div>
-            <span className="font-serif text-2xl font-bold text-foreground">ScoopPay</span>
+            <span className="font-serif text-2xl font-bold text-foreground">Payscoop</span>
           </Link>
 
           {/* Desktop Navigation */}

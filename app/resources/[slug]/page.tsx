@@ -5,6 +5,7 @@ import { Footer } from "@/components/landing/footer"
 import { PageHeader } from "@/components/landing/page-header"
 import { getResourceBySlug, resourceItems } from "@/lib/zoho-navigation-data"
 import { getResourceDetailBySlug } from "@/lib/resource-details"
+import { TanzaniaResourceWorkbench } from "@/components/resources/tanzania-resource-workbench"
 import Link from "next/link"
 
 export async function generateStaticParams() {
@@ -19,7 +20,7 @@ export async function generateMetadata({
   const detail = getResourceDetailBySlug(slug)
 
   return {
-    title: item ? `${item.title} — ScoopPay HRM` : "Resource Not Found — ScoopPay HRM",
+    title: item ? `${item.title} — Payscoop HRM` : "Resource Not Found — Payscoop HRM",
     description: detail?.hero ?? item?.summary,
   }
 }
@@ -166,6 +167,10 @@ export default async function ResourceDetailPage({
               ))}
             </div>
           </div>
+
+          {(slug === "free-tools" || slug === "compliance" || slug === "hr-toolkit") && (
+            <TanzaniaResourceWorkbench slug={slug} />
+          )}
         </div>
       </section>
 

@@ -6,7 +6,7 @@ import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Our Modules — ScoopPay HRM",
+  title: "Our Modules — Payscoop HRM",
   description: "Explore our comprehensive HR modules including payroll, attendance, leave management, performance tracking, and more.",
 }
 
@@ -143,7 +143,7 @@ export default function ModulesPage() {
         <div className="mx-auto max-w-4xl text-center">
           <blockquote>
             <p className="font-serif text-2xl font-medium leading-relaxed text-foreground lg:text-3xl">
-              &ldquo;ScoopPay HRM has transformed how we manage our workforce. The platform is intuitive, 
+              &ldquo;Payscoop HRM has transformed how we manage our workforce. The platform is intuitive, 
               comprehensive, and has saved us countless hours on administrative tasks.&rdquo;
             </p>
           </blockquote>

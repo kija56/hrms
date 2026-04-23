@@ -1,23 +1,24 @@
 import type { Metadata } from 'next'
-import { DM_Sans, Syne } from 'next/font/google'
+import { Inter, Outfit } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const dmSans = DM_Sans({ 
+const inter = Inter({
   subsets: ["latin"],
-  variable: '--font-dm-sans',
+  variable: '--font-inter',
   display: 'swap',
 });
 
-const syne = Syne({ 
+const outfit = Outfit({
   subsets: ["latin"],
-  variable: '--font-syne',
+  weight: ["700"],
+  variable: '--font-outfit',
   display: 'swap',
 });
 
 export const metadata: Metadata = {
-  title: 'ScoopPay HRM — Modern HR Management Platform',
-  description: 'Streamline your HR operations with ScoopPay HRM. From payroll to performance, manage your entire workforce in one powerful, intuitive platform.',
+  title: 'Payscoop HRM — Modern HR Management Platform',
+  description: 'Streamline your HR operations with Payscoop HRM. From payroll to performance, manage your entire workforce in one powerful, intuitive platform.',
   generator: 'v0.app',
   icons: {
     icon: [
@@ -44,7 +45,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${dmSans.variable} ${syne.variable} bg-background`}>
+    <html lang="en" className={`${inter.variable} ${outfit.variable} bg-background`}>
       <body className="font-sans antialiased">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}

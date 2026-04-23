@@ -21,7 +21,7 @@ export async function generateMetadata({
   const description = detail?.hero ?? item?.summary
 
   return {
-    title: item ? `${item.title} — ScoopPay HRM` : "Feature Not Found — ScoopPay HRM",
+    title: item ? `${item.title} — Payscoop HRM` : "Feature Not Found — Payscoop HRM",
     description,
   }
 }
