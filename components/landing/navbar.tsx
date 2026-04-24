@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import {
   Menu,
@@ -185,10 +186,16 @@ export function Navbar() {
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary">
-              <span className="font-serif text-xl font-bold text-primary-foreground">S</span>
+            <div className="rounded-lg p-1.5">
+              <Image
+                src="/images/payscoop-logo-color-on-dark.png"
+                alt="Payscoop HRM"
+                width={300}
+                height={88}
+                className="h-12 w-auto sm:h-14"
+                priority
+              />
             </div>
-            <span className="font-serif text-2xl font-bold text-foreground">Payscoop</span>
           </Link>
 
           {/* Desktop Navigation */}

@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { MessageCircle, Briefcase, Users, Camera } from "lucide-react"
 
 const footerLinks = {
@@ -14,7 +15,7 @@ const footerLinks = {
     { label: "Careers", href: "/solutions/mid-size-businesses" },
     { label: "Blog", href: "/resources/blogs" },
     { label: "Press", href: "/resources/whats-new" },
-    { label: "Contact", href: "/resources/submit-tickets" },
+    { label: "Contact", href: "/#contact" },
   ],
   resources: [
     { label: "Free Tools", href: "/resources/free-tools" },
@@ -48,10 +49,15 @@ export function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary">
-                <span className="font-serif text-xl font-bold text-primary-foreground">S</span>
+              <div className="rounded-xl p-1">
+                <Image
+                  src="/images/payscoop-logo-white-on-dark.png"
+                  alt="Payscoop HRM"
+                  width={300}
+                  height={88}
+                  className="h-12 w-auto sm:h-14"
+                />
               </div>
-              <span className="font-serif text-2xl font-bold text-background">Payscoop</span>
             </Link>
             <p className="mt-4 max-w-xs text-background/60">
               Modern HR management that feels human, scales like software. Built for teams across Africa and beyond.
