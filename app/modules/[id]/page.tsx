@@ -1,4 +1,5 @@
 import { Navbar } from "@/components/landing/navbar"
+import { CtaBanner } from "@/components/landing/cta-banner"
 import { Footer } from "@/components/landing/footer"
 import { PageHeader } from "@/components/landing/page-header"
 import { modules, getModuleById, getModuleIcon } from "@/lib/modules-data"
@@ -7,6 +8,8 @@ import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, Check, Download, FileText } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { FaqSection } from "@/components/shared/faq-section"
+import { getModuleFaqs } from "@/lib/faq-data"
 
 export async function generateStaticParams() {
   return modules.map((module) => ({
@@ -30,7 +33,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   }
 }
 
-export default async function ModuleDetailPage({ params }: { params: Promise<{ id: string }> }) {
+export default async function ModuleDetailPage({ params }: Readonly<{ params: Promise<{ id: string }> }>) {
   const { id } = await params
   const module = getModuleById(id)
 
@@ -151,9 +154,9 @@ export default async function ModuleDetailPage({ params }: { params: Promise<{ i
 
                   {/* Features List */}
                   <div className="space-y-4">
-                    {module.features.map((feature, index) => (
+                    {module.features.map((feature) => (
                       <div 
-                        key={index}
+                        key={feature}
                         className="flex items-start gap-3 rounded-xl border border-border bg-card p-4 transition-all hover:border-primary/20 hover:shadow-md"
                       >
                         <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-secondary text-secondary-foreground">
@@ -175,7 +178,7 @@ export default async function ModuleDetailPage({ params }: { params: Promise<{ i
                 <div className="grid gap-6 md:grid-cols-3">
                   {module.benefits.map((benefit, index) => (
                     <div 
-                      key={index}
+                      key={benefit.title}
                       className="group rounded-2xl border border-border bg-card p-6 transition-all hover:border-primary/20 hover:shadow-lg"
                     >
                       <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 font-serif text-xl font-bold text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
@@ -282,6 +285,17 @@ export default async function ModuleDetailPage({ params }: { params: Promise<{ i
         </div>
       </section>
 
+      <section className="px-4 pb-20 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <FaqSection
+            title={`${module.title} FAQs`}
+            description="Common questions about setup, usage, and outcomes for this module."
+            items={getModuleFaqs(module.id)}
+          />
+        </div>
+      </section>
+
+      <CtaBanner />
       <Footer />
     </main>
   )

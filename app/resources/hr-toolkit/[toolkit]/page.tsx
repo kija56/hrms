@@ -2,6 +2,7 @@ import { notFound } from "next/navigation"
 import { Check } from "lucide-react"
 import Link from "next/link"
 import { Navbar } from "@/components/landing/navbar"
+import { CtaBanner } from "@/components/landing/cta-banner"
 import { Footer } from "@/components/landing/footer"
 import { PageHeader } from "@/components/landing/page-header"
 import { getHrToolkitPageBySlug, hrToolkitPages } from "@/lib/hr-toolkit-pages"
@@ -112,6 +113,7 @@ export default async function HrToolkitDetailPage({
           </div>
         </div>
       </section>
+      <CtaBanner />
       <Footer />
     </main>
   )

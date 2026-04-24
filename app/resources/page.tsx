@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { Navbar } from "@/components/landing/navbar"
+import { CtaBanner } from "@/components/landing/cta-banner"
 import { Footer } from "@/components/landing/footer"
 import { PageHeader } from "@/components/landing/page-header"
 import { resourceItems } from "@/lib/zoho-navigation-data"
@@ -50,6 +51,7 @@ export default function ResourcesPage() {
         </div>
       </section>
 
+      <CtaBanner />
       <Footer />
     </main>
   )

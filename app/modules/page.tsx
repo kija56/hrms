@@ -1,4 +1,5 @@
 import { Navbar } from "@/components/landing/navbar"
+import { CtaBanner } from "@/components/landing/cta-banner"
 import { Footer } from "@/components/landing/footer"
 import { PageHeader } from "@/components/landing/page-header"
 import { modules, getModuleIcon } from "@/lib/modules-data"
@@ -157,6 +158,7 @@ export default function ModulesPage() {
         </div>
       </section>
 
+      <CtaBanner />
       <Footer />
     </main>
   )

@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation"
 import { Check } from "lucide-react"
 import { Navbar } from "@/components/landing/navbar"
+import { CtaBanner } from "@/components/landing/cta-banner"
 import { Footer } from "@/components/landing/footer"
 import { PageHeader } from "@/components/landing/page-header"
 import { getLegalDocumentBySlug, legalDocuments } from "@/lib/legal-content"
@@ -72,6 +73,7 @@ export default async function LegalPage({
         </div>
       </section>
 
+      <CtaBanner />
       <Footer />
     </main>
   )

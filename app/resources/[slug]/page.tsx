@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation"
 import { Check, ArrowRight, Download, ExternalLink, PlayCircle, BookOpen } from "lucide-react"
 import { Navbar } from "@/components/landing/navbar"
+import { CtaBanner } from "@/components/landing/cta-banner"
 import { Footer } from "@/components/landing/footer"
 import { PageHeader } from "@/components/landing/page-header"
 import { getResourceBySlug, resourceItems } from "@/lib/zoho-navigation-data"
@@ -174,6 +175,7 @@ export default async function ResourceDetailPage({
         </div>
       </section>
 
+      <CtaBanner />
       <Footer />
     </main>
   )

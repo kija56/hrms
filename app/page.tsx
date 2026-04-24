@@ -7,6 +7,8 @@ import { HowItWorks } from "@/components/landing/how-it-works"
 import { Testimonials } from "@/components/landing/testimonials"
 import { CtaBanner } from "@/components/landing/cta-banner"
 import { Footer } from "@/components/landing/footer"
+import { FaqSection } from "@/components/shared/faq-section"
+import { homeFaqs } from "@/lib/faq-data"
 
 export default function LandingPage() {
   return (
@@ -18,6 +20,15 @@ export default function LandingPage() {
       <Features />
       <HowItWorks />
       <Testimonials />
+      <div className="px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <FaqSection
+            title="Frequently Asked Questions"
+            description="Everything teams usually ask before rolling out Payscoop HRM."
+            items={homeFaqs}
+          />
+        </div>
+      </div>
       <CtaBanner />
       <Footer />
     </main>

@@ -1,10 +1,13 @@
 import { notFound } from "next/navigation"
 import { Check, ArrowRight, Sparkles } from "lucide-react"
 import { Navbar } from "@/components/landing/navbar"
+import { CtaBanner } from "@/components/landing/cta-banner"
 import { Footer } from "@/components/landing/footer"
 import { PageHeader } from "@/components/landing/page-header"
 import { getSolutionBySlug, solutionItems } from "@/lib/zoho-navigation-data"
 import { getSolutionDetailBySlug } from "@/lib/solution-details"
+import { FaqSection } from "@/components/shared/faq-section"
+import { getSolutionFaqs } from "@/lib/faq-data"
 import Link from "next/link"
 
 export async function generateStaticParams() {
@@ -134,9 +137,18 @@ export default async function SolutionDetailPage({
               ))}
             </div>
           </div>
+
+          <div className="mt-8">
+            <FaqSection
+              title={`${item.title} FAQs`}
+              description="Common questions from teams evaluating this solution path."
+              items={getSolutionFaqs(item.slug)}
+            />
+          </div>
         </div>
       </section>
 
+      <CtaBanner />
       <Footer />
     </main>
   )

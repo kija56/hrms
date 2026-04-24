@@ -1,10 +1,13 @@
 import { notFound } from "next/navigation"
 import { Check, ArrowRight } from "lucide-react"
 import { Navbar } from "@/components/landing/navbar"
+import { CtaBanner } from "@/components/landing/cta-banner"
 import { Footer } from "@/components/landing/footer"
 import { PageHeader } from "@/components/landing/page-header"
 import { featureItems, getFeatureBySlug } from "@/lib/zoho-navigation-data"
 import { getFeatureDetailBySlug } from "@/lib/feature-details"
+import { FaqSection } from "@/components/shared/faq-section"
+import { getFeatureFaqs } from "@/lib/faq-data"
 import Link from "next/link"
 
 export async function generateStaticParams() {
@@ -128,9 +131,18 @@ export default async function FeatureDetailPage({
               ))}
             </div>
           </div>
+
+          <div className="mt-8">
+            <FaqSection
+              title={`${item.title} FAQs`}
+              description="Helpful answers to common questions for this feature."
+              items={getFeatureFaqs(item.slug)}
+            />
+          </div>
         </div>
       </section>
 
+      <CtaBanner />
       <Footer />
     </main>
   )
