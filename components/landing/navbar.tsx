@@ -41,6 +41,14 @@ interface DropdownSection {
   groups: MenuGroup[]
 }
 
+function getMenuItemHref(section: DropdownSection, slug: string) {
+  if (section.label === "Resources" && slug === "submit-tickets") {
+    return "/#contact"
+  }
+
+  return `${section.href}/${slug}`
+}
+
 const dropdownSections: DropdownSection[] = [
   {
     href: "/features",
@@ -238,7 +246,7 @@ export function Navbar() {
                               return (
                                 <Link
                                   key={item.slug}
-                                  href={`${section.href}/${item.slug}`}
+                                  href={getMenuItemHref(section, item.slug)}
                                   className="block rounded-xl border border-transparent p-3 transition-all hover:border-border hover:bg-muted/50"
                                 >
                                   <div className="flex items-start gap-2">
@@ -314,7 +322,7 @@ export function Navbar() {
                     {section.items.slice(0, 6).map((item) => (
                       <Link
                         key={item.slug}
-                        href={`${section.href}/${item.slug}`}
+                        href={getMenuItemHref(section, item.slug)}
                         className="block text-sm text-muted-foreground transition-colors hover:text-foreground"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >

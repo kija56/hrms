@@ -35,14 +35,14 @@ export function HowItWorks() {
 
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link
-                  href="/contact"
+                  href="/#contact"
                   className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/30 transition-all hover:-translate-y-0.5 hover:shadow-xl hover:shadow-primary/35"
                 >
                   Download for Android
                   <ArrowUpRight className="h-4 w-4" />
                 </Link>
                 <Link
-                  href="/contact"
+                  href="/#contact"
                   className="inline-flex items-center gap-2 rounded-full border border-background/30 px-6 py-3 text-sm font-semibold text-background transition-all hover:-translate-y-0.5 hover:border-background/50"
                 >
                   Download for iOS

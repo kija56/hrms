@@ -233,7 +233,7 @@ export const resourceItems: NavPageItem[] = [
   },
   {
     slug: "submit-tickets",
-    title: "Submit Tickets",
+    title: "Contact Us",
     summary: "Contact support quickly for technical and account assistance.",
     highlights: ["Issue reporting", "Priority support", "Resolution tracking"],
   },

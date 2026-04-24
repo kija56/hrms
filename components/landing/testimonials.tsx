@@ -105,7 +105,7 @@ export function Testimonials() {
             </h3>
           </div>
           <Link
-            href="/contact"
+            href="/#contact"
             className="mt-4 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/25 transition-all hover:-translate-y-0.5 hover:shadow-xl hover:shadow-primary/35 lg:mt-0"
           >
             Book a live demo

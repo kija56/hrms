@@ -5,6 +5,7 @@ import { CompanyMarquee } from "@/components/landing/company-marquee"
 import { Features } from "@/components/landing/features"
 import { HowItWorks } from "@/components/landing/how-it-works"
 import { Testimonials } from "@/components/landing/testimonials"
+import { ContactSection } from "@/components/landing/contact-section"
 import { CtaBanner } from "@/components/landing/cta-banner"
 import { Footer } from "@/components/landing/footer"
 import { FaqSection } from "@/components/shared/faq-section"
@@ -27,6 +28,7 @@ export default function LandingPage() {
       <Features />
       <HowItWorks />
       <Testimonials />
+      <ContactSection />
       <div className="px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <FaqSection
