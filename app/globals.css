@@ -140,6 +140,15 @@
   }
 }
 
+@keyframes mobile-sway {
+  0%, 100% {
+    transform: translateY(0px) rotate(-0.8deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(0.8deg);
+  }
+}
+
 @keyframes marquee {
   0% {
     transform: translateX(0);
@@ -176,6 +185,10 @@
 .animate-float-delayed {
   animation: float-delayed 5s ease-in-out infinite;
   animation-delay: 1s;
+}
+
+.animate-mobile-sway {
+  animation: mobile-sway 5.5s ease-in-out infinite;
 }
 
 .animate-marquee {

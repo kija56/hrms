@@ -1,5 +1,6 @@
 "use client"
 
+import { useEffect, useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import {
@@ -8,6 +9,21 @@ import {
 } from "lucide-react"
 
 export function HowItWorks() {
+  const appImages = [
+    "/images/payscoop-mobile-app.png",
+    "/images/payscoop-mobile-app-2.png",
+  ] as const
+
+  const [activeImage, setActiveImage] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveImage((prev) => (prev + 1) % appImages.length)
+    }, 3500)
+
+    return () => clearInterval(interval)
+  }, [appImages.length])
+
   return (
     <section id="download-app" className="bg-foreground py-20 lg:py-28 scroll-mt-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -45,15 +61,36 @@ export function HowItWorks() {
             </div>
 
             <div className="relative">
-              <div className="absolute -inset-4 rounded-4xl bg-primary/15 blur-3xl" />
-              <Image
-                src="/images/payscoop-mobile-app.png"
-                alt="Payscoop HRM mobile app screens on two smartphones"
-                width={800}
-                height={800}
-                className="relative mx-auto h-auto w-full max-w-xl object-contain lg:max-w-2xl"
-                priority
-              />
+              <div className="absolute -inset-6 rounded-4xl bg-primary/20 blur-3xl" />
+              <div className="absolute inset-0 animate-pulse rounded-full bg-primary/10 blur-2xl animation-duration-[4s]" />
+              <div className="relative mx-auto aspect-square w-full max-w-xl lg:max-w-2xl">
+                {appImages.map((src, index) => (
+                  <Image
+                    key={src}
+                    src={src}
+                    alt="Payscoop HRM mobile app screens on smartphones"
+                    width={1024}
+                    height={1024}
+                    className={`animate-mobile-sway absolute inset-0 h-full w-full object-contain drop-shadow-2xl origin-[55%_45%] transition-opacity duration-700 ${
+                      index === activeImage ? "opacity-100" : "opacity-0"
+                    }`}
+                    priority={index === 0}
+                  />
+                ))}
+              </div>
+              <div className="mt-4 flex justify-center gap-2">
+                {appImages.map((src, index) => (
+                  <button
+                    key={`${src}-dot`}
+                    type="button"
+                    aria-label={`Show app image ${index + 1}`}
+                    onClick={() => setActiveImage(index)}
+                    className={`h-2.5 rounded-full transition-all ${
+                      index === activeImage ? "w-6 bg-primary" : "w-2.5 bg-background/40 hover:bg-background/60"
+                    }`}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
