@@ -8,6 +8,7 @@ import { featureItems, getFeatureBySlug } from "@/lib/zoho-navigation-data"
 import { getFeatureDetailBySlug } from "@/lib/feature-details"
 import { FaqSection } from "@/components/shared/faq-section"
 import { getFeatureFaqs } from "@/lib/faq-data"
+import { buildFaqJsonLd } from "@/lib/seo"
 import Link from "next/link"
 
 export async function generateStaticParams() {
@@ -42,8 +43,15 @@ export default async function FeatureDetailPage({
     notFound()
   }
 
+  const featureFaqs = getFeatureFaqs(item.slug)
+  const faqJsonLd = buildFaqJsonLd(featureFaqs)
+
   return (
     <main className="min-h-screen bg-background">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <Navbar />
       <PageHeader
         title={item.title}
@@ -136,7 +144,7 @@ export default async function FeatureDetailPage({
             <FaqSection
               title={`${item.title} FAQs`}
               description="Helpful answers to common questions for this feature."
-              items={getFeatureFaqs(item.slug)}
+              items={featureFaqs}
             />
           </div>
         </div>

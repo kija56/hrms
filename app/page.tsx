@@ -9,10 +9,17 @@ import { CtaBanner } from "@/components/landing/cta-banner"
 import { Footer } from "@/components/landing/footer"
 import { FaqSection } from "@/components/shared/faq-section"
 import { homeFaqs } from "@/lib/faq-data"
+import { buildFaqJsonLd } from "@/lib/seo"
 
 export default function LandingPage() {
+  const faqJsonLd = buildFaqJsonLd(homeFaqs)
+
   return (
     <main className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <Navbar />
       <Hero />
       <AboutUs />

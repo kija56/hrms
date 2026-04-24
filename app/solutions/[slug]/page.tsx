@@ -8,6 +8,7 @@ import { getSolutionBySlug, solutionItems } from "@/lib/zoho-navigation-data"
 import { getSolutionDetailBySlug } from "@/lib/solution-details"
 import { FaqSection } from "@/components/shared/faq-section"
 import { getSolutionFaqs } from "@/lib/faq-data"
+import { buildFaqJsonLd } from "@/lib/seo"
 import Link from "next/link"
 
 export async function generateStaticParams() {
@@ -40,8 +41,15 @@ export default async function SolutionDetailPage({
     notFound()
   }
 
+  const solutionFaqs = getSolutionFaqs(item.slug)
+  const faqJsonLd = buildFaqJsonLd(solutionFaqs)
+
   return (
     <main className="min-h-screen bg-background">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <Navbar />
       <PageHeader
         title={item.title}
@@ -142,7 +150,7 @@ export default async function SolutionDetailPage({
             <FaqSection
               title={`${item.title} FAQs`}
               description="Common questions from teams evaluating this solution path."
-              items={getSolutionFaqs(item.slug)}
+              items={solutionFaqs}
             />
           </div>
         </div>

@@ -10,6 +10,7 @@ import { ArrowRight, Check, Download, FileText } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { FaqSection } from "@/components/shared/faq-section"
 import { getModuleFaqs } from "@/lib/faq-data"
+import { buildFaqJsonLd } from "@/lib/seo"
 
 export async function generateStaticParams() {
   return modules.map((module) => ({
@@ -43,9 +44,15 @@ export default async function ModuleDetailPage({ params }: Readonly<{ params: Pr
 
   // Get related modules (excluding current)
   const relatedModules = modules.filter(m => m.id !== module.id).slice(0, 3)
+  const moduleFaqs = getModuleFaqs(module.id)
+  const faqJsonLd = buildFaqJsonLd(moduleFaqs)
 
   return (
     <main className="min-h-screen bg-background">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <Navbar />
       
       <PageHeader 
@@ -290,7 +297,7 @@ export default async function ModuleDetailPage({ params }: Readonly<{ params: Pr
           <FaqSection
             title={`${module.title} FAQs`}
             description="Common questions about setup, usage, and outcomes for this module."
-            items={getModuleFaqs(module.id)}
+            items={moduleFaqs}
           />
         </div>
       </section>
