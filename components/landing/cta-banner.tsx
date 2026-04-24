@@ -22,7 +22,7 @@ export function CtaBanner() {
           Ready to transform your HR operations?
         </h2>
         <p className="mx-auto mt-6 max-w-2xl text-lg text-primary-foreground/80">
-          Join thousands of companies already using Payscoop HRM to streamline their workforce management. Start your free 14-day trial today.
+          Join organizations using Payscoop HRM to streamline workforce operations with confidence. Talk to our team for a tailored walkthrough.
         </p>
 
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -30,7 +30,7 @@ export function CtaBanner() {
             size="lg"
             className="bg-white text-primary hover:bg-white/90"
           >
-            Start Free Trial
+            Book a Demo
             <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
           <Button
@@ -38,12 +38,12 @@ export function CtaBanner() {
             variant="outline"
             className="border-white/30 bg-transparent text-white hover:bg-white/10 hover:text-white"
           >
-            Schedule a Demo
+            Contact Sales
           </Button>
         </div>
 
         <p className="mt-6 text-sm text-primary-foreground/60">
-          No credit card required • 14-day free trial • Cancel anytime
+          Personalized onboarding • Implementation support • Dedicated success guidance
         </p>
       </div>
     </section>

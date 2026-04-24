@@ -66,104 +66,67 @@ const modules = [
 ]
 
 export function Modules() {
+  const cardStyles = [
+    "sm:col-span-2 bg-linear-to-br from-primary/12 via-card to-card",
+    "bg-card",
+    "bg-card",
+    "bg-card",
+    "bg-linear-to-br from-secondary/50 via-card to-card",
+    "bg-card",
+    "sm:col-span-2 bg-linear-to-br from-primary/8 via-card to-card",
+  ] as const
+
   return (
     <section id="modules" className="bg-muted/30 py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center">
+        <div className="mx-auto max-w-3xl text-center">
           <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-secondary/20 bg-secondary/5 px-4 py-2 text-sm font-medium text-secondary">
             <BarChart3 className="h-4 w-4" />
             Modules
           </span>
           <h2 className="font-serif text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl text-balance">
-            Modules We Serve
+            Explore Powerful HR Modules
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            Eight powerful modules that work together seamlessly. Pick what you need or get them all for the complete HR experience.
+            Seven connected modules designed to simplify the full employee lifecycle, from hiring and onboarding to payroll and performance.
           </p>
         </div>
 
-        {/* Modules List */}
-        <div className="mt-16 overflow-hidden rounded-3xl border border-border bg-card">
+        {/* Modules Grid */}
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {modules.map((module, index) => (
             <Link
               key={module.id}
               href={module.href}
-              className={`group grid gap-4 px-6 py-6 transition-colors hover:bg-muted/40 lg:grid-cols-[56px_1fr_auto] lg:items-center lg:px-8 ${
-                index < modules.length - 1 ? "border-b border-border" : ""
-              }`}
+              className={`group relative overflow-hidden rounded-3xl border border-border p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/35 hover:shadow-xl hover:shadow-primary/10 ${cardStyles[index % cardStyles.length]}`}
             >
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-foreground text-background transition-colors group-hover:bg-primary">
-                <module.icon className="h-7 w-7" />
-              </div>
+              <div className="pointer-events-none absolute -right-10 -top-10 h-28 w-28 rounded-full bg-primary/10 blur-2xl transition-opacity group-hover:opacity-100" />
 
-              <div>
-                <h3 className="font-serif text-xl font-bold text-foreground">{module.title}</h3>
-                <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{module.description}</p>
-              </div>
-
-              <div className="flex items-center gap-4 lg:justify-end">
-                <span className="inline-flex items-center gap-2 font-medium text-foreground transition-colors group-hover:text-primary">
-                  Learn more
-                  <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <div className="relative flex items-start justify-between gap-4">
+                <div className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-foreground text-background transition-colors group-hover:bg-primary">
+                  <module.icon className="h-6 w-6" />
+                </div>
+                <span className="rounded-full border border-border bg-background/80 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">
+                  Module
                 </span>
+              </div>
+
+              <h3 className="relative mt-5 font-serif text-2xl font-bold text-foreground">
+                {module.title}
+              </h3>
+              <p className="relative mt-2 text-sm leading-relaxed text-muted-foreground">
+                {module.description}
+              </p>
+
+              <div className="relative mt-6 inline-flex items-center gap-2 text-sm font-semibold text-foreground transition-colors group-hover:text-primary">
+                Learn more
+                <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </div>
             </Link>
           ))}
         </div>
 
-        {/* Two-column CTA */}
-        <div className="mt-16 grid gap-6 lg:grid-cols-2">
-          {/* For Employees */}
-          <div className="group relative overflow-hidden rounded-3xl bg-secondary p-8 lg:p-10">
-            <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-background/10" />
-            <div className="absolute -bottom-10 -left-10 h-40 w-40 rounded-full bg-background/5" />
-            
-            <div className="relative">
-              <span className="mb-4 inline-block rounded-full bg-background/20 px-3 py-1 text-sm font-medium text-secondary-foreground">
-                Category
-              </span>
-              <h3 className="mb-4 font-serif text-2xl font-bold text-secondary-foreground lg:text-3xl">
-                For Employees
-              </h3>
-              <p className="mb-6 max-w-md text-secondary-foreground/80">
-                Access your payslips, request leave, track goals, and manage your profile from anywhere with our intuitive self-service portal.
-              </p>
-              <Link
-                href="/modules"
-                className="inline-flex items-center gap-2 rounded-full bg-background px-6 py-3 font-medium text-secondary transition-all hover:gap-3"
-              >
-                Get Started
-                <ArrowUpRight className="h-4 w-4" />
-              </Link>
-            </div>
-          </div>
-
-          {/* For Businesses */}
-          <div className="group relative overflow-hidden rounded-3xl bg-foreground p-8 lg:p-10">
-            <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-primary/20" />
-            <div className="absolute -bottom-10 -left-10 h-40 w-40 rounded-full bg-primary/10" />
-            
-            <div className="relative">
-              <span className="mb-4 inline-block rounded-full bg-primary/20 px-3 py-1 text-sm font-medium text-background">
-                Category
-              </span>
-              <h3 className="mb-4 font-serif text-2xl font-bold text-background lg:text-3xl">
-                For Business Owners
-              </h3>
-              <p className="mb-6 max-w-md text-background/70">
-                Streamline your HR operations with powerful tools for payroll, attendance, recruitment, and analytics all in one place.
-              </p>
-              <Link
-                href="/solutions"
-                className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 font-medium text-primary-foreground transition-all hover:gap-3"
-              >
-                Book a Demo
-                <ArrowUpRight className="h-4 w-4" />
-              </Link>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   )
