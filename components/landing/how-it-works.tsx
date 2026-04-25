@@ -12,6 +12,7 @@ export function HowItWorks() {
   const appImages = [
     "/images/payscoop-mobile-app.png",
     "/images/payscoop-mobile-app-2.png",
+    "/images/payscoop-mobile-app-3.png",
   ] as const
 
   const [activeImage, setActiveImage] = useState(0)
