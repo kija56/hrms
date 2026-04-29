@@ -5,7 +5,7 @@ import Image from "next/image"
 
 const stats = [
   { value: "50", suffix: "k", label: "Active Employees" },
-  { value: "99", suffix: "%", label: "Jobs Fulfillment Rate" },
+  { value: "99", suffix: "%", label: "Jobs Fulfillment" },
   { value: "10", suffix: "k+", label: "Tasks Completed" },
   { value: "200", suffix: "+", label: "Satisfied Businesses" },
 ]
