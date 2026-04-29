@@ -1,43 +1,77 @@
+import Image from "next/image"
+
 const companies = [
-  "Safaricom",
-  "Equity Bank",
-  "KCB Group",
-  "M-PESA",
-  "Twiga Foods",
-  "Jumia",
-  "Andela",
-  "Cellulant",
-  "Sendy",
-  "Kobo360",
-  "Flutterwave",
-  "Paystack",
+  { name: "Safaricom", logo: "/logos/safaricom.png" },
+  { name: "Equity Bank", logo: "/logos/equity.png" },
+  { name: "KCB Group", logo: "/logos/kcb.png" },
+  { name: "M-PESA", logo: "/logos/mpesa.png" },
+  { name: "Twiga Foods", logo: "/logos/twiga.png" },
+  { name: "Jumia", logo: "/logos/jumia.svg" },
+  { name: "Andela", logo: "/logos/andela.png" },
+  { name: "Cellulant", logo: "/logos/cellulant.png" },
+  { name: "Sendy", logo: "/logos/sendy.jpeg" },
+  { name: "Kobo360", logo: "/logos/kobo.png" },
+  { name: "Flutterwave", logo: "/logos/flutterwave.png" },
+  { name: "Paystack", logo: "/logos/paystack.png" },
 ]
 
 export function CompanyMarquee() {
+  // We double the list to ensure the loop is seamless
+  const marqueeItems = [...companies, ...companies]
+
   return (
-    <section className="border-y border-border bg-card py-8">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <p className="mb-6 text-center text-sm font-medium text-muted-foreground">
-          Trusted by leading companies across Africa
+    <section className="py-16 bg-background overflow-hidden">
+      {/* Animation Styles */}
+      <style>{`
+        @keyframes marquee {
+          from { transform: translateX(0); }
+          to { transform: translateX(-50%); }
+        }
+        .animate-marquee-infinite {
+          display: flex;
+          width: max-content;
+          animation: marquee 35s linear infinite;
+        }
+        .marquee-mask {
+          mask-image: linear-gradient(
+            to right,
+            transparent,
+            black 15%,
+            black 85%,
+            transparent
+          );
+          -webkit-mask-image: linear-gradient(
+            to right,
+            transparent,
+            black 15%,
+            black 85%,
+            transparent
+          );
+        }
+      `}</style>
+
+      <div className="mx-auto max-w-7xl px-4 mb-12">
+        <p className="text-center text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground/50">
+          Trusted by Industry Giants
         </p>
       </div>
-      
-      <div className="relative overflow-hidden">
-        {/* Gradient Overlays */}
-        <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-24 bg-gradient-to-r from-card to-transparent" />
-        <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-24 bg-gradient-to-l from-card to-transparent" />
-        
-        {/* Marquee */}
-        <div className="animate-marquee flex gap-12 whitespace-nowrap">
-          {[...companies, ...companies].map((company, i) => (
+
+      <div className="marquee-mask relative w-full">
+        <div className="animate-marquee-infinite hover:[animation-play-state:paused] flex items-center">
+          {marqueeItems.map((company, i) => (
             <div
-              key={`${company}-${i}`}
-              className="flex items-center gap-2 text-lg font-medium text-muted-foreground/60 transition-colors hover:text-foreground"
+              key={`${company.name}-${i}`}
+              className="flex items-center justify-center px-12 transition-all duration-500"
             >
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-muted">
-                <span className="font-serif text-sm font-bold">{company[0]}</span>
+              <div className="relative h-12 w-36 shrink-0 transition-all duration-500 grayscale opacity-30 hover:grayscale-0 hover:opacity-100 hover:scale-110">
+                <Image
+                  src={company.logo}
+                  alt={`${company.name} logo`}
+                  fill
+                  className="object-contain"
+                  sizes="150px"
+                />
               </div>
-              <span>{company}</span>
             </div>
           ))}
         </div>
